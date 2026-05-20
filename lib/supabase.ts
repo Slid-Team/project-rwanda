@@ -1,9 +1,23 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+let supabaseInstance: SupabaseClient | null = null;
 
-export const supabase = createClient(supabaseUrl, supabaseServiceKey);
+function getSupabase(): SupabaseClient {
+  if (!supabaseInstance) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!supabaseUrl || !supabaseServiceKey) {
+      throw new Error('Supabase environment variables are not configured');
+    }
+
+    supabaseInstance = createClient(supabaseUrl, supabaseServiceKey);
+  }
+  return supabaseInstance;
+}
+
+// Export for direct access if needed
+export { getSupabase as supabase };
 
 // Types for database tables
 export interface AnalysisRecord {
@@ -29,7 +43,7 @@ export interface ProjectRecord {
 
 // Database operations
 export async function saveAnalysis(analysis: AnalysisRecord) {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from('analyses')
     .upsert({
       project_id: analysis.project_id,
@@ -48,7 +62,7 @@ export async function saveAnalysis(analysis: AnalysisRecord) {
 }
 
 export async function getLatestAnalysis(projectId: string) {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from('analyses')
     .select('*')
     .eq('project_id', projectId)
@@ -61,7 +75,7 @@ export async function getLatestAnalysis(projectId: string) {
 }
 
 export async function updateProjectLastAnalysis(projectId: string, date: string) {
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from('projects')
     .update({ last_analysis: date })
     .eq('id', projectId);

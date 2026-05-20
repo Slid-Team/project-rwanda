@@ -457,83 +457,91 @@ export default async function ProjectPage({ params }: PageProps) {
               <div className="card p-6">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-semibold text-text-primary">Collateral Ratio</h3>
-                  <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.collateralRatio.grade || 'C') }}>
-                    {analysis.dimensions.collateralRatio.grade || '—'}
+                  <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.collateralRatio?.grade || 'C') }}>
+                    {analysis.dimensions.collateralRatio?.grade || '—'}
                   </span>
                 </div>
-                <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.collateralRatio.status)}`}>
-                  {analysis.dimensions.collateralRatio.status}
+                <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.collateralRatio?.status || '')}`}>
+                  {analysis.dimensions.collateralRatio?.status}
                 </p>
-                <p className="text-text-secondary text-sm mb-4">{analysis.dimensions.collateralRatio.summary}</p>
+                <p className="text-text-secondary text-sm mb-4">{analysis.dimensions.collateralRatio?.summary}</p>
                 <div className="text-sm">
-                  <span className="text-accent-green font-semibold">{analysis.dimensions.collateralRatio.ratio}%</span>
+                  <span className="text-accent-green font-semibold">{analysis.dimensions.collateralRatio?.ratio}%</span>
                   <span className="text-text-tertiary ml-1">collateralized</span>
                 </div>
               </div>
 
               {/* Per-Token Verification */}
-              <div className="card p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-semibold text-text-primary">Per-Token Verification</h3>
-                  <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.perTokenVerification.grade || 'C') }}>
-                    {analysis.dimensions.perTokenVerification.grade || '—'}
-                  </span>
+              {analysis.dimensions.perTokenVerification && (
+                <div className="card p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-semibold text-text-primary">Per-Token Verification</h3>
+                    <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.perTokenVerification?.grade || 'C') }}>
+                      {analysis.dimensions.perTokenVerification?.grade || '—'}
+                    </span>
+                  </div>
+                  <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.perTokenVerification?.status || '')}`}>
+                    {analysis.dimensions.perTokenVerification?.status}
+                  </p>
+                  <p className="text-text-secondary text-sm">{analysis.dimensions.perTokenVerification?.summary}</p>
                 </div>
-                <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.perTokenVerification.status)}`}>
-                  {analysis.dimensions.perTokenVerification.status}
-                </p>
-                <p className="text-text-secondary text-sm">{analysis.dimensions.perTokenVerification.summary}</p>
-              </div>
+              )}
 
               {/* Reporting Freshness */}
-              <div className="card p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-semibold text-text-primary">Reporting Freshness</h3>
-                  <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.reportingFreshness.grade || 'C') }}>
-                    {analysis.dimensions.reportingFreshness.grade || '—'}
-                  </span>
+              {analysis.dimensions.reportingFreshness && (
+                <div className="card p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-semibold text-text-primary">Reporting Freshness</h3>
+                    <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.reportingFreshness?.grade || 'C') }}>
+                      {analysis.dimensions.reportingFreshness?.grade || '—'}
+                    </span>
+                  </div>
+                  <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.reportingFreshness?.status || '')}`}>
+                    {analysis.dimensions.reportingFreshness?.status}
+                  </p>
+                  <p className="text-text-secondary text-sm mb-4">{analysis.dimensions.reportingFreshness?.summary}</p>
+                  <div className="text-sm text-text-tertiary">
+                    <p>Verifier: {analysis.dimensions.reportingFreshness?.verificationAgent}</p>
+                    <p>Frequency: {analysis.dimensions.reportingFreshness?.frequency}</p>
+                  </div>
                 </div>
-                <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.reportingFreshness.status)}`}>
-                  {analysis.dimensions.reportingFreshness.status}
-                </p>
-                <p className="text-text-secondary text-sm mb-4">{analysis.dimensions.reportingFreshness.summary}</p>
-                <div className="text-sm text-text-tertiary">
-                  <p>Verifier: {analysis.dimensions.reportingFreshness.verificationAgent}</p>
-                  <p>Frequency: {analysis.dimensions.reportingFreshness.frequency}</p>
-                </div>
-              </div>
+              )}
 
               {/* Bankruptcy Protection */}
-              <div className="card p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-semibold text-text-primary">Bankruptcy Protection</h3>
-                  <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.bankruptcyProtection.grade || 'C') }}>
-                    {analysis.dimensions.bankruptcyProtection.grade || '—'}
-                  </span>
+              {analysis.dimensions.bankruptcyProtection && (
+                <div className="card p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-semibold text-text-primary">Bankruptcy Protection</h3>
+                    <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.bankruptcyProtection?.grade || 'C') }}>
+                      {analysis.dimensions.bankruptcyProtection?.grade || '—'}
+                    </span>
+                  </div>
+                  <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.bankruptcyProtection?.status || '')}`}>
+                    {analysis.dimensions.bankruptcyProtection?.status}
+                  </p>
+                  <p className="text-text-secondary text-sm mb-4">{analysis.dimensions.bankruptcyProtection?.summary}</p>
+                  <div className="text-sm text-text-tertiary">
+                    <p>Issuer: {analysis.dimensions.bankruptcyProtection?.issuer}</p>
+                    <p>Jurisdiction: {analysis.dimensions.bankruptcyProtection?.jurisdiction}</p>
+                  </div>
                 </div>
-                <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.bankruptcyProtection.status)}`}>
-                  {analysis.dimensions.bankruptcyProtection.status}
-                </p>
-                <p className="text-text-secondary text-sm mb-4">{analysis.dimensions.bankruptcyProtection.summary}</p>
-                <div className="text-sm text-text-tertiary">
-                  <p>Issuer: {analysis.dimensions.bankruptcyProtection.issuer}</p>
-                  <p>Jurisdiction: {analysis.dimensions.bankruptcyProtection.jurisdiction}</p>
-                </div>
-              </div>
+              )}
 
               {/* Custody & Counterparty */}
-              <div className="card p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-semibold text-text-primary">Custody & Counterparty</h3>
-                  <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.custodyCounterparty.grade || 'C') }}>
-                    {analysis.dimensions.custodyCounterparty.grade || '—'}
-                  </span>
+              {analysis.dimensions.custodyCounterparty && (
+                <div className="card p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-semibold text-text-primary">Custody & Counterparty</h3>
+                    <span className="text-xl font-black" style={{ color: getDimensionGradeColor(analysis.dimensions.custodyCounterparty?.grade || 'C') }}>
+                      {analysis.dimensions.custodyCounterparty?.grade || '—'}
+                    </span>
+                  </div>
+                  <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.custodyCounterparty?.status || '')}`}>
+                    {analysis.dimensions.custodyCounterparty?.status}
+                  </p>
+                  <p className="text-text-secondary text-sm">{analysis.dimensions.custodyCounterparty?.summary}</p>
                 </div>
-                <p className={`text-sm font-medium mb-2 ${getStatusColor(analysis.dimensions.custodyCounterparty.status)}`}>
-                  {analysis.dimensions.custodyCounterparty.status}
-                </p>
-                <p className="text-text-secondary text-sm">{analysis.dimensions.custodyCounterparty.summary}</p>
-              </div>
+              )}
             </div>
           </div>
         </section>
