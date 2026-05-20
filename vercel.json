@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/analyze?project=ondo-gm",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/analyze?project=circle-usdc",
+      "schedule": "0 0 1 * *"
+    },
+    {
+      "path": "/api/cron/analyze?project=tether-usdt",
+      "schedule": "0 0 1 */3 *"
+    }
+  ]
+}

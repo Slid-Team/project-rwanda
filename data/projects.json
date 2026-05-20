@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tether-usdt",
+    "name": "Tether",
+    "token": "USDT",
+    "website": "https://tether.to",
+    "description": "The largest stablecoin by market cap, backed by reserves including cash, commercial paper, and other assets.",
+    "marketCap": 191770000000,
+    "totalSupply": 145000000000,
+    "chains": ["Ethereum", "Tron", "Solana", "Avalanche", "Polygon"],
+    "lastAnalysis": "2026-05-20",
+    "logoUrl": "/logos/usdt.png",
+    "type": "stablecoin"
+  },
+  {
+    "id": "circle-usdc",
+    "name": "Circle",
+    "token": "USDC",
+    "website": "https://circle.com",
+    "description": "A regulated stablecoin backed 100% by cash and short-duration US Treasuries.",
+    "marketCap": 77100000000,
+    "totalSupply": 76800000000,
+    "chains": ["Ethereum", "Solana", "Avalanche", "Polygon", "Arbitrum", "Base"],
+    "lastAnalysis": "2026-05-20",
+    "logoUrl": "/logos/usdc.png",
+    "type": "stablecoin"
+  },
+  {
+    "id": "ondo-gm",
+    "name": "Ondo Global Markets",
+    "token": "GM Tokens",
+    "website": "https://ondo.finance",
+    "description": "200+ tokenized US stocks & ETFs. Daily Ankura Trust attestation. $1B+ TVL.",
+    "marketCap": 1148750666,
+    "totalSupply": 8015980,
+    "chains": ["Ethereum", "BNB Chain", "Solana"],
+    "lastAnalysis": "2026-05-20",
+    "logoUrl": "/logos/ondo.png",
+    "type": "ondo-gm"
+  }
+]

@@ -1,0 +1,180 @@
+{
+  "projectId": "circle-usdc",
+  "analysisDate": "2026-05-20",
+  "reportDate": "2026-05-18",
+  "lastCirculationUpdate": "2026-05-18T23:59:59Z",
+  "auditor": "Deloitte & Touche LLP",
+  "auditorTier": "big4",
+  "auditStandard": "AICPA Attestation",
+  "dataSource": "https://www.circle.com/transparency",
+
+  "trustScore": 94,
+  "grade": "A",
+  "status": "HEALTHY",
+
+  "overview": {
+    "totalAssets": 77100000000,
+    "totalLiabilities": 76800000000,
+    "netEquity": 300000000,
+    "reserveRatio": 100.39,
+    "usdcOnEthereum": 38000000000,
+    "usdcOnSolana": 12000000000,
+    "usdcOnOther": 26800000000
+  },
+
+  "dimensions": {
+    "geniusAct": {
+      "score": 100,
+      "grade": "A+",
+      "weight": 25,
+      "status": "PASS",
+      "compliantPct": 100.0,
+      "nonCompliantPct": 0.0,
+      "monthlyReporting": true,
+      "summary": "100% GENIUS-compliant reserves. Monthly Deloitte assurance. Exceeds all requirements.",
+      "permittedAssets": [
+        { "name": "<3-Month US Treasuries", "pct": 75.0, "compliant": true },
+        { "name": "Overnight Reverse Treasury Repo", "pct": 15.0, "compliant": true },
+        { "name": "Deposits at SIIs", "pct": 8.0, "compliant": true },
+        { "name": "Other Bank Deposits (FDIC)", "pct": 2.0, "compliant": true }
+      ],
+      "prohibitedAssets": [],
+      "findings": [
+        "100% of reserves in GENIUS-permitted assets",
+        "Reports weekly (exceeds monthly requirement)",
+        "Monthly third-party assurance by Big Four auditor",
+        "Annual audit required for $50B+ issuer — compliant"
+      ]
+    },
+    "reserveAdequacy": {
+      "score": 95,
+      "grade": "A",
+      "weight": 25,
+      "status": "FULLY BACKED",
+      "ratio": 100.39,
+      "buffer": 300000000,
+      "summary": "100.39% backed with $300M equity buffer. All reserves in stable, liquid assets.",
+      "findings": [
+        "Reserve ratio above 100%",
+        "$300M equity buffer provides cushion",
+        "All reserves in stable assets — no stress test risk",
+        "No volatile assets that could impair backing"
+      ]
+    },
+    "reserveComposition": {
+      "score": 100,
+      "grade": "A+",
+      "weight": 20,
+      "status": "PRISTINE",
+      "summary": "100% safe. All reserves in cash, short-term Treasuries, and bank deposits. Zero risky assets.",
+      "breakdown": {
+        "cashAndEquivalents": { "pct": 100.0, "usd": 77100000000, "tier": "safe" },
+        "preciousMetals": { "pct": 0.0, "usd": 0, "tier": "risky" },
+        "securedLoans": { "pct": 0.0, "usd": 0, "tier": "risky" },
+        "bitcoins": { "pct": 0.0, "usd": 0, "tier": "risky" },
+        "otherInvestments": { "pct": 0.0, "usd": 0, "tier": "risky" },
+        "publicEquities": { "pct": 0.0, "usd": 0, "tier": "risky" },
+        "corporateBonds": { "pct": 0.0, "usd": 0, "tier": "risky" }
+      },
+      "cashBreakdown": {
+        "shortTermTreasuries": { "pct": 75.0, "ofTotal": 75.0 },
+        "overnightReverseRepo": { "pct": 15.0, "ofTotal": 15.0 },
+        "siiDeposits": { "pct": 8.0, "ofTotal": 8.0 },
+        "otherBankDeposits": { "pct": 2.0, "ofTotal": 2.0 }
+      },
+      "tiers": {
+        "tier1": { "name": "Cash + Overnight Repo + Short Treasuries", "pct": 98.0, "usd": 75558000000 },
+        "tier2": { "name": "FDIC Bank Deposits", "pct": 2.0, "usd": 1542000000 },
+        "tier3": { "name": "None", "pct": 0, "usd": 0 },
+        "tier4": { "name": "None", "pct": 0, "usd": 0 }
+      },
+      "fundStructure": {
+        "name": "Circle Reserve Fund (USDXX)",
+        "type": "SEC-registered 2a-7 government money market fund",
+        "manager": "BlackRock",
+        "dailyReporting": true
+      },
+      "findings": [
+        "100% in GENIUS-compliant assets",
+        "Zero exposure to volatile assets",
+        "Managed by BlackRock in SEC-registered fund",
+        "Daily independent reporting available"
+      ]
+    },
+    "custody": {
+      "score": 98,
+      "grade": "A+",
+      "weight": 15,
+      "status": "INSTITUTIONAL",
+      "summary": "US-based. BlackRock-managed SEC-registered fund. Reserves legally segregated for USDC holders.",
+      "issuer": "Circle Internet Financial, LLC",
+      "parentCompany": "Circle Internet Group, Inc.",
+      "jurisdiction": "USA (Boston, MA)",
+      "treasuryCustodian": "BlackRock",
+      "fundRegistration": "SEC 2a-7",
+      "reserveSegregation": true,
+      "findings": [
+        "US jurisdiction with full regulatory recourse",
+        "BlackRock manages reserves — world's largest asset manager",
+        "SEC-registered 2a-7 fund structure",
+        "Reserves legally segregated for USDC holders"
+      ]
+    },
+    "reportingAudit": {
+      "score": 98,
+      "grade": "A+",
+      "weight": 15,
+      "status": "GOLD STANDARD",
+      "frequency": "weekly",
+      "assuranceFrequency": "monthly",
+      "auditor": "Deloitte & Touche LLP",
+      "auditorTier": "big4",
+      "standard": "AICPA Attestation",
+      "lastReport": "2026-05-18",
+      "daysSinceReport": 2,
+      "onTime": true,
+      "summary": "Weekly disclosure. Monthly Deloitte assurance. Daily BlackRock fund reporting. 2-day data freshness.",
+      "findings": [
+        "Weekly reserve disclosure (exceeds GENIUS monthly)",
+        "Deloitte Big Four monthly assurance since 2022",
+        "Daily BlackRock fund portfolio reporting",
+        "7+ years of monthly reports since Oct 2018"
+      ]
+    }
+  },
+
+  "redFlags": [],
+
+  "observations": [
+    { "id": "thin_buffer", "severity": "info", "category": "Risk", "title": "Thin Equity Buffer", "description": "Equity buffer at $300M (0.39%) — but reserves are 100% stable assets" },
+    { "id": "some_non_sii", "severity": "info", "category": "Custody", "title": "Some Non-SII Deposits", "description": "Small portion of deposits at non-SII FDIC-insured banks" },
+    { "id": "no_exact_pct", "severity": "info", "category": "Transparency", "title": "Chart-Only Breakdown", "description": "Exact asset % breakdown shown as chart only, not numerical table" }
+  ],
+
+  "issuanceRedemption": {
+    "7day": { "issued": 6300000000, "redeemed": 6800000000, "netChange": -500000000 },
+    "30day": { "issued": 23100000000, "redeemed": 24700000000, "netChange": -1600000000 },
+    "365day": { "issued": 292100000000, "redeemed": 276000000000, "netChange": 16100000000 }
+  },
+
+  "stressTest": {
+    "scenario30pctDrop": {
+      "description": "Not applicable — no volatile assets",
+      "loss": 0,
+      "newRatio": 100.39,
+      "result": "NOT_APPLICABLE",
+      "summary": "All reserves in stable assets — no market stress risk"
+    },
+    "scenario50pctDrop": {
+      "description": "Not applicable — no volatile assets",
+      "loss": 0,
+      "newRatio": 100.39,
+      "result": "NOT_APPLICABLE",
+      "summary": "Only risk is US government default or FDIC failure"
+    }
+  },
+
+  "historicalIssues": [],
+
+  "summary": "Circle maintains 100.39% reserve ratio with 100% GENIUS Act-compliant assets. Weekly disclosure with monthly Big Four assurance. BlackRock-managed SEC-registered fund. US jurisdiction with full regulatory protections."
+}

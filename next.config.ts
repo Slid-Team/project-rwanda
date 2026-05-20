@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/ondoprotocol/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.ondo.finance',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,0 +1,211 @@
+{
+  "projectId": "ondo-gm",
+  "analysisDate": "2026-05-20",
+  "reportDate": "2026-05-12",
+  "lastCirculationUpdate": "2026-05-12T20:00:00Z",
+  "auditor": "Ankura Trust Company, LLC",
+  "auditorTier": "independent-trust",
+  "auditStandard": "Daily Attestation",
+  "dataSource": "https://app.ondo.finance",
+
+  "trustScore": 85,
+  "grade": "B+",
+  "status": "HEALTHY",
+  "category": "tokenized-equities",
+
+  "overview": {
+    "totalAssets": 1148750666.88,
+    "totalLiabilities": 1036334649.61,
+    "netEquity": 112416017.27,
+    "reserveRatio": 110.85,
+    "gmTokensOutstanding": 8015980.93,
+    "gmTokensMarketValue": 998043765.97,
+    "usdyTokensOutstanding": 19785617.28,
+    "usdyTokensMarketValue": 22408319.16,
+    "availableAssets": "200+",
+    "supportedChains": ["Ethereum", "BNB Chain", "Solana"]
+  },
+
+  "dimensions": {
+    "collateralRatio": {
+      "score": 95,
+      "grade": "A",
+      "weight": 20,
+      "status": "OVER-COLLATERALIZED",
+      "question": "How much backing does it actually hold?",
+      "ratio": 110.85,
+      "buffer": 112416017.27,
+      "summary": "110.85% collateralized. $112M buffer. Collateral and obligations move proportionally.",
+      "breakdown": {
+        "securities": { "pct": 86.9, "usd": 998043766, "label": "US Stocks & ETFs at Alpaca" },
+        "stablecoins": { "pct": 6.1, "usd": 70363125, "label": "USDC + USDT (PSM + BitGo)" },
+        "fiat": { "pct": 2.9, "usd": 33017977, "label": "USD at Alpaca + BitGo" },
+        "buffer": { "pct": 4.1, "usd": 47325799, "label": "Excess / Buffer" }
+      },
+      "findings": [
+        "Collateral ratio 110.85% — over-collateralized",
+        "$112M buffer covers operational gaps",
+        "Collateral is the stock itself — ratio stays stable",
+        "Stablecoin collateral ~$70M has counterparty risk"
+      ]
+    },
+    "perTokenVerification": {
+      "score": 70,
+      "grade": "B-",
+      "weight": 25,
+      "status": "AGGREGATE VERIFIED",
+      "question": "Are actual stocks held for each token?",
+      "summary": "Totals verified daily by Ankura Trust. But per-token stock holdings are NOT public.",
+      "transparencyChecklist": {
+        "totalAssetsPublic": true,
+        "ratioPublic": true,
+        "securitiesReviewed": true,
+        "onChainTokenSupply": true,
+        "fiatBalancesPublic": true,
+        "stablecoinBalancesPublic": true,
+        "individualStockHoldings": false,
+        "perTokenMatching": false,
+        "accountStatementsPublic": false,
+        "tradingTimingPublic": false
+      },
+      "trustChain": "Investor → Ankura Trust → Alpaca account statements",
+      "findings": [
+        "Total assets ($1.15B) publicly disclosed",
+        "Collateral ratio (110.85%) publicly disclosed",
+        "Individual stock holdings (e.g., 50,000 NVDA shares) NOT public",
+        "Token↔stock matching verification NOT public — only Ankura sees it"
+      ]
+    },
+    "reportingFreshness": {
+      "score": 95,
+      "grade": "A",
+      "weight": 20,
+      "status": "REAL-TIME",
+      "question": "How often is it reported? When was the last report?",
+      "frequency": "daily",
+      "verificationAgent": "Ankura Trust Company, LLC",
+      "lastReport": "2026-05-12",
+      "daysSinceReport": 8,
+      "onTime": true,
+      "summary": "Daily Ankura attestation. 8 days since last report. On-time. Public Dropbox access.",
+      "reportUrl": "https://www.dropbox.com/scl/fo/jzkrw308mrhsasauqrjqq/AJxJak0F90kcwkADSN3DCD4",
+      "findings": [
+        "Best-in-class reporting frequency (daily)",
+        "Ankura Trust independent verification",
+        "8 days since last report — no delays",
+        "Compared to Tether (50 days), vastly superior"
+      ]
+    },
+    "bankruptcyProtection": {
+      "score": 75,
+      "grade": "B",
+      "weight": 20,
+      "status": "MODERATE",
+      "question": "What happens to investor assets if issuer goes bankrupt?",
+      "summary": "Bankruptcy remote, 1st-priority security interest, redemption rights. BUT BVI jurisdiction, not SEC-registered.",
+      "issuer": "Ondo Global Markets (BVI) Limited",
+      "parentCompany": "Ondo Finance, Inc.",
+      "jurisdiction": "British Virgin Islands",
+      "checklist": {
+        "bankruptcyRemote": true,
+        "securityInterest": true,
+        "firstPriority": true,
+        "independentSecurityAgent": true,
+        "redeemableRights": true,
+        "regulatedJurisdiction": false,
+        "secRegistered": false,
+        "usAvailable": false
+      },
+      "findings": [
+        "Bankruptcy-remote SPV structure",
+        "First-priority security interest held",
+        "BVI offshore jurisdiction — limited regulatory oversight",
+        "Not SEC-registered — relies on exemptions"
+      ]
+    },
+    "custodyCounterparty": {
+      "score": 90,
+      "grade": "A-",
+      "weight": 15,
+      "status": "INSTITUTIONAL",
+      "question": "Where are the actual stocks held? Who are the counterparties?",
+      "summary": "Alpaca (FINRA/SIPC) holds stocks. BitGo holds fiat/stablecoins. Ankura verifies daily.",
+      "custodians": [
+        { "name": "Alpaca Securities LLC", "role": "Stock/ETF custody + trading", "regulated": true, "regulator": "FINRA/SIPC", "singlePointOfFailure": true },
+        { "name": "BitGo", "role": "Fiat + stablecoin custody", "regulated": true },
+        { "name": "Ankura Trust Company, LLC", "role": "Verification Agent (daily)", "independent": true },
+        { "name": "Security Agent", "role": "First-priority security interest", "independent": true }
+      ],
+      "findings": [
+        "Alpaca is a FINRA-regulated broker-dealer",
+        "SIPC protection (up to $500K per customer)",
+        "Alpaca single dependency is a potential risk",
+        "Mitigated by daily Ankura independent verification"
+      ]
+    }
+  },
+
+  "redFlags": [
+    { "id": "no_public_stock_breakdown", "severity": "high", "category": "Transparency", "title": "Per-Token Holdings Not Public", "description": "Only aggregate totals verifiable. Individual stock holdings only seen by Ankura." },
+    { "id": "bvi_jurisdiction", "severity": "medium", "category": "Jurisdiction", "title": "BVI Offshore Jurisdiction", "description": "British Virgin Islands — limited regulatory oversight" },
+    { "id": "not_sec_registered", "severity": "medium", "category": "Compliance", "title": "Not SEC Registered", "description": "Not registered under US securities law — relies on exemptions" },
+    { "id": "single_broker_dealer", "severity": "medium", "category": "Risk", "title": "Single Broker-Dealer Dependency", "description": "All stocks held at Alpaca — single counterparty" },
+    { "id": "us_excluded", "severity": "low", "category": "Access", "title": "US Persons Excluded", "description": "US persons excluded due to regulatory uncertainty" },
+    { "id": "stablecoin_counterparty", "severity": "low", "category": "Risk", "title": "Stablecoin Collateral", "description": "~$70M USDC/USDT introduces counterparty risk" },
+    { "id": "limited_track_record", "severity": "low", "category": "Maturity", "title": "Less Than 1 Year Old", "description": "Launched mid-2025 — limited track record" }
+  ],
+
+  "positives": [
+    { "id": "daily_attestation", "impact": "high", "title": "Daily Independent Verification", "description": "Ankura Trust issues daily attestation" },
+    { "id": "security_interest", "impact": "high", "title": "First-Priority Security Interest", "description": "Perfected security interest for tokenholders" },
+    { "id": "bankruptcy_remote", "impact": "high", "title": "Bankruptcy-Remote Structure", "description": "Bankruptcy-remote SPV" },
+    { "id": "us_broker_dealer", "impact": "medium", "title": "US Broker-Dealer", "description": "Alpaca Securities (FINRA/SIPC)" },
+    { "id": "overcollateralized", "impact": "medium", "title": "110.85% Over-Collateralized", "description": "$112M buffer" },
+    { "id": "multi_chain", "impact": "medium", "title": "Multi-Chain", "description": "Ethereum, BNB Chain, Solana" },
+    { "id": "tvl_milestone", "impact": "medium", "title": "$1B+ TVL", "description": "Reached $1B in May 2026" },
+    { "id": "asset_breadth", "impact": "medium", "title": "200+ Assets", "description": "200+ US stocks & ETFs tokenized" }
+  ],
+
+  "exampleAsset": {
+    "token": "NVDAon",
+    "underlying": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "tokenPrice": 224.64,
+    "underlyingPrice": 224.60,
+    "sharesPerToken": 1.0001,
+    "trackingError": 0.0001,
+    "underlyingMarketCap": "5.38T"
+  },
+
+  "collateralBreakdown": [
+    { "account": "USD in Fiat Accounts - BitGo", "amount": 21444.66 },
+    { "account": "USD in Trading Account - Alpaca", "amount": 32896532.66 },
+    { "account": "USD in Clearing Account - Alpaca", "amount": 100000.00 },
+    { "account": "Stablecoins (USDC) - BitGo", "amount": 12.28 },
+    { "account": "Stablecoins (USDC) - PSM", "amount": 31697504.86 },
+    { "account": "Stablecoins (BSC-USDT) - PSM", "amount": 30443732.17 },
+    { "account": "Stablecoins (SOL-USDC) - PSM", "amount": 8221875.74 },
+    { "account": "Securities at Alpaca", "amount": 998043765.97 }
+  ],
+
+  "stressTest": {
+    "scenario30pctDrop": {
+      "description": "30% stock price drop",
+      "loss": 0,
+      "newRatio": 110.85,
+      "result": "STABLE",
+      "summary": "Both collateral and obligations drop together — ratio maintained"
+    },
+    "scenario50pctDrop": {
+      "description": "50% stock price drop",
+      "loss": 0,
+      "newRatio": 110.85,
+      "result": "STABLE",
+      "summary": "Token value and collateral drop simultaneously — ratio stable"
+    }
+  },
+
+  "historicalIssues": [],
+
+  "summary": "Daily Ankura Trust verification. 110.85% over-collateralized. US broker-dealer Alpaca custody. But per-token stock holdings not public, BVI jurisdiction."
+}

@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Apple-style colors */
+  --bg: #FFFFFF;
+  --bg-secondary: #FBFBFD;
+  --bg-card: #FFFFFF;
+
+  /* Text */
+  --text-primary: #1D1D1F;
+  --text-secondary: #86868B;
+  --text-tertiary: #6E6E73;
+
+  /* Accents */
+  --blue: #0071E3;
+  --green: #34C759;
+  --red: #FF3B30;
+  --orange: #FF9500;
+
+  /* Status */
+  --status-healthy: #34C759;
+  --status-caution: #FF9500;
+  --status-warning: #FF3B30;
+  --status-critical: #FF2D55;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent-blue: var(--blue);
+  --color-accent-green: var(--green);
+  --color-accent-red: var(--red);
+  --color-accent-orange: var(--orange);
+  --color-status-healthy: var(--status-healthy);
+  --color-status-caution: var(--status-caution);
+  --color-status-warning: var(--status-warning);
+  --color-status-critical: var(--status-critical);
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  --font-mono: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', var(--font-sans), sans-serif;
+  min-height: 100%;
+  letter-spacing: -0.01em;
+}
+
+/* Apple-style card with subtle shadow */
+.card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04), 0 2px 8px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Status badge styles */
+.status-healthy {
+  background: rgba(52, 199, 89, 0.12);
+  color: var(--status-healthy);
+}
+
+.status-caution {
+  background: rgba(255, 149, 0, 0.12);
+  color: var(--status-caution);
+}
+
+.status-warning {
+  background: rgba(255, 59, 48, 0.12);
+  color: var(--status-warning);
+}
+
+.status-critical {
+  background: rgba(255, 45, 85, 0.12);
+  color: var(--status-critical);
+}
+
+/* Apple-style button */
+.btn-primary {
+  background: var(--blue);
+  color: white;
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 980px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #0077ED;
+  transform: scale(1.02);
+}
+
+/* Apple-style link */
+.link {
+  color: var(--blue);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Background grid animation */
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.animate-grid-move {
+  animation: grid-move 20s linear infinite;
 }

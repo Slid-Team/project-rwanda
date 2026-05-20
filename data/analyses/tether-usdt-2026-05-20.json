@@ -1,0 +1,174 @@
+{
+  "projectId": "tether-usdt",
+  "analysisDate": "2026-05-20",
+  "reportDate": "2026-03-31",
+  "lastCirculationUpdate": "2026-05-19T23:30:03Z",
+  "auditor": "BDO Italia",
+  "auditorTier": "mid-tier",
+  "auditStandard": "ISAE 3000R",
+  "dataSource": "https://tether.to/en/transparency/?tab=reports",
+
+  "trustScore": 72,
+  "grade": "C",
+  "status": "CAUTION",
+
+  "overview": {
+    "totalAssets": 191767741495,
+    "totalLiabilities": 183535531717,
+    "netEquity": 8232209778,
+    "reserveRatio": 104.49,
+    "usdtOnEthereum": 96245386589,
+    "usdtOnTron": 88449002844,
+    "usdtOnOther": 5000000000
+  },
+
+  "dimensions": {
+    "geniusAct": {
+      "score": 45,
+      "grade": "D",
+      "weight": 25,
+      "status": "FAIL",
+      "compliantPct": 73.64,
+      "nonCompliantPct": 26.36,
+      "monthlyReporting": false,
+      "summary": "$50.5B in GENIUS-prohibited assets. Reports quarterly, not monthly.",
+      "permittedAssets": [
+        { "name": "US Treasury Bills", "pct": 61.04, "compliant": true },
+        { "name": "Overnight Reverse Repo", "pct": 10.08, "compliant": true },
+        { "name": "Term Reverse Repo", "pct": 2.47, "compliant": true },
+        { "name": "Cash & Bank Deposits", "pct": 0.06, "compliant": true }
+      ],
+      "prohibitedAssets": [
+        { "name": "Precious Metals (Gold)", "pct": 10.34, "usd": 19800000000 },
+        { "name": "Secured Loans", "pct": 8.25, "usd": 15800000000 },
+        { "name": "Bitcoins", "pct": 3.45, "usd": 6600000000 },
+        { "name": "Other Investments", "pct": 2.53, "usd": 4900000000 },
+        { "name": "Public Equities", "pct": 1.78, "usd": 3400000000 }
+      ],
+      "findings": [
+        "26.36% of reserves in GENIUS-prohibited assets",
+        "Reports quarterly instead of required monthly",
+        "18-month compliance deadline: January 2027"
+      ]
+    },
+    "reserveAdequacy": {
+      "score": 92,
+      "grade": "A",
+      "weight": 25,
+      "status": "OVER-COLLATERALIZED",
+      "ratio": 104.49,
+      "buffer": 8232209778,
+      "summary": "104.49% backed with $8.2B equity buffer.",
+      "findings": [
+        "Reserve ratio above 100%",
+        "$8.2B equity buffer provides cushion",
+        "Buffer may be insufficient for severe market stress"
+      ]
+    },
+    "reserveComposition": {
+      "score": 68,
+      "grade": "C",
+      "weight": 20,
+      "status": "MIXED",
+      "summary": "73.64% safe, 26.36% risky. $50.5B in gold, BTC, loans, equities.",
+      "breakdown": {
+        "cashAndEquivalents": { "pct": 73.64, "usd": 141200000000, "tier": "safe" },
+        "preciousMetals": { "pct": 10.34, "usd": 19800000000, "tier": "risky" },
+        "securedLoans": { "pct": 8.25, "usd": 15800000000, "tier": "risky" },
+        "bitcoins": { "pct": 3.45, "usd": 6600000000, "tier": "risky" },
+        "otherInvestments": { "pct": 2.53, "usd": 4900000000, "tier": "risky" },
+        "publicEquities": { "pct": 1.78, "usd": 3400000000, "tier": "risky" },
+        "corporateBonds": { "pct": 0.0, "usd": 0, "tier": "safe" }
+      },
+      "cashBreakdown": {
+        "usTreasuryBills": { "pct": 82.87, "ofTotal": 61.04 },
+        "overnightReverseRepo": { "pct": 13.69, "ofTotal": 10.08 },
+        "termReverseRepo": { "pct": 3.36, "ofTotal": 2.47 },
+        "cashAndBankDeposits": { "pct": 0.08, "ofTotal": 0.06 }
+      },
+      "tiers": {
+        "tier1": { "name": "Cash + Overnight Repo", "pct": 10.14, "usd": 19400000000 },
+        "tier2": { "name": "Treasury Bills + Term Repo", "pct": 63.50, "usd": 121800000000 },
+        "tier3": { "name": "None", "pct": 0, "usd": 0 },
+        "tier4": { "name": "Gold + BTC + Loans + Equities", "pct": 26.36, "usd": 50500000000 }
+      },
+      "findings": [
+        "Corporate bonds removed (was 15%+ in 2021)",
+        "Commercial paper eliminated",
+        "Treasury allocation increased",
+        "Gold, BTC, equities exposure has grown"
+      ]
+    },
+    "custody": {
+      "score": 65,
+      "grade": "C",
+      "weight": 15,
+      "status": "MIXED",
+      "summary": "El Salvador incorporated. Treasury via Cantor Fitzgerald. Gold/BTC custody undisclosed.",
+      "issuer": "Tether International S.A. de C.V.",
+      "parentCompany": "iFinex Inc.",
+      "jurisdiction": "El Salvador",
+      "treasuryCustodian": "Cantor Fitzgerald",
+      "findings": [
+        "El Salvador jurisdiction limits regulatory recourse",
+        "Bitfinex/Tether share ownership — historical controversy",
+        "$15.8B in secured loans — borrowers not disclosed",
+        "Gold and Bitcoin custody not publicly verifiable"
+      ]
+    },
+    "reportingAudit": {
+      "score": 70,
+      "grade": "B-",
+      "weight": 15,
+      "status": "ADEQUATE",
+      "frequency": "quarterly",
+      "auditor": "BDO Italia",
+      "auditorTier": "mid-tier",
+      "standard": "ISAE 3000R",
+      "lastReport": "2026-03-31",
+      "daysSinceReport": 50,
+      "onTime": true,
+      "summary": "Quarterly by BDO Italia. On time but 50-day data gap.",
+      "findings": [
+        "Quarterly reporting (GENIUS requires monthly)",
+        "BDO Italia is mid-tier, not Big Four",
+        "Daily circulation updates available",
+        "50-day data gap between reports"
+      ]
+    }
+  },
+
+  "redFlags": [
+    { "id": "genius_non_compliant", "severity": "high", "category": "Compliance", "title": "GENIUS Act Non-Compliant", "description": "26.36% of reserves ($50.5B) in prohibited assets" },
+    { "id": "volatile_assets", "severity": "high", "category": "Risk", "title": "Volatile Asset Exposure", "description": "$50.5B in volatile/illiquid assets including gold, BTC, and equities" },
+    { "id": "btc_exposure", "severity": "medium", "category": "Transparency", "title": "Bitcoin Exposure", "description": "$6.6B in Bitcoin — crypto-backed stablecoin paradox" },
+    { "id": "secured_loans", "severity": "medium", "category": "Transparency", "title": "Undisclosed Loan Borrowers", "description": "$15.8B in secured loans with undisclosed borrowers" },
+    { "id": "reporting_gap", "severity": "medium", "category": "Reporting", "title": "50-Day Data Gap", "description": "Quarterly reporting creates significant data staleness" },
+    { "id": "offshore", "severity": "medium", "category": "Jurisdiction", "title": "Offshore Jurisdiction", "description": "El Salvador incorporation limits regulatory recourse" }
+  ],
+
+  "stressTest": {
+    "scenario30pctDrop": {
+      "description": "30% drop in risky assets",
+      "loss": 15150000000,
+      "newRatio": 96.2,
+      "result": "SLIGHTLY_UNDER",
+      "summary": "Equity buffer wiped, ratio drops below 100%"
+    },
+    "scenario50pctDrop": {
+      "description": "50% drop in risky assets",
+      "loss": 25250000000,
+      "newRatio": 90.7,
+      "result": "UNDER_BACKED",
+      "summary": "Significantly under-backed, potential peg risk"
+    }
+  },
+
+  "historicalIssues": [
+    { "year": "2016-2018", "issue": "CFTC found sufficient reserves only 27.6% of days" },
+    { "year": "2021", "issue": "Fined $41M by CFTC for misrepresentation" },
+    { "year": "2017-2021", "issue": "No regular independent audit" }
+  ],
+
+  "summary": "Tether maintains a 104.49% reserve ratio but holds $50.5B in GENIUS Act prohibited assets. Quarterly reporting by mid-tier auditor creates data gaps. El Salvador jurisdiction and undisclosed loan borrowers add risk."
+}
