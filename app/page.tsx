@@ -54,6 +54,9 @@ export default async function Home() {
               <p className="mt-6 text-[19px] text-text-secondary leading-relaxed max-w-[480px]">
                 Building the universal trust layer for Real World Assets — accessible to everyone.
               </p>
+              <p className="mt-3 text-[15px] text-text-tertiary">
+                Powered by AI Audit Report Analysis Agent
+              </p>
 
               {/* Stats Row */}
               <div className="flex gap-10 mt-10">
