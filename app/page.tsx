@@ -52,7 +52,7 @@ export default async function Home() {
                 <span className="bg-gradient-to-r from-[#0071E3] to-[#34C759] bg-clip-text text-transparent">Real World Assets</span>
               </h1>
               <p className="mt-6 text-[19px] text-text-secondary leading-relaxed max-w-[480px]">
-                AI-powered transparency scoring for stablecoins and tokenized assets. Every analysis recorded on-chain.
+                Building the universal trust layer for Real World Assets — accessible to everyone.
               </p>
 
               {/* Stats Row */}
