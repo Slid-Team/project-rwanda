@@ -34,6 +34,7 @@ interface StablecoinAnalysis {
   dimensions: {
     geniusAct: {
       score: number;
+      grade?: string;
       status: string;
       compliantPct: number;
       nonCompliantPct: number;
@@ -44,6 +45,7 @@ interface StablecoinAnalysis {
     };
     reserveAdequacy: {
       score: number;
+      grade?: string;
       status: string;
       ratio: number;
       buffer: number;
@@ -52,6 +54,7 @@ interface StablecoinAnalysis {
     };
     reserveComposition: {
       score: number;
+      grade?: string;
       status: string;
       summary: string;
       breakdown: Record<string, { pct: number; usd: number; tier: string }>;
@@ -65,6 +68,7 @@ interface StablecoinAnalysis {
     };
     custody: {
       score: number;
+      grade?: string;
       status: string;
       summary: string;
       issuer: string;
@@ -74,10 +78,53 @@ interface StablecoinAnalysis {
     };
     reportingAudit: {
       score: number;
+      grade?: string;
       status: string;
       frequency: string;
       auditor: string;
       daysSinceReport: number;
+      summary: string;
+      findings: string[];
+    };
+    // Tokenized Equities dimensions
+    collateralRatio?: {
+      score: number;
+      grade?: string;
+      status: string;
+      ratio: number;
+      buffer: number;
+      summary: string;
+      findings: string[];
+    };
+    perTokenVerification?: {
+      score: number;
+      grade?: string;
+      status: string;
+      summary: string;
+      findings: string[];
+    };
+    reportingFreshness?: {
+      score: number;
+      grade?: string;
+      status: string;
+      frequency: string;
+      verificationAgent: string;
+      summary: string;
+      findings: string[];
+    };
+    bankruptcyProtection?: {
+      score: number;
+      grade?: string;
+      status: string;
+      issuer: string;
+      jurisdiction: string;
+      summary: string;
+      findings: string[];
+    };
+    custodyCounterparty?: {
+      score: number;
+      grade?: string;
+      status: string;
       summary: string;
       findings: string[];
     };
