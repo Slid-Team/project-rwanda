@@ -52,10 +52,7 @@ export default async function Home() {
                 <span className="bg-gradient-to-r from-[#0071E3] to-[#34C759] bg-clip-text text-transparent">Real World Assets</span>
               </h1>
               <p className="mt-6 text-[19px] text-text-secondary leading-relaxed max-w-[480px]">
-                Building the universal trust layer for Real World Assets — accessible to everyone.
-              </p>
-              <p className="mt-3 text-[15px] text-text-tertiary">
-                Powered by AI Audit Report Analysis Agent
+                Building the universal trust layer for Real World Assets — accessible to everyone. Powered by AI Audit Report Analysis Agent
               </p>
 
               {/* Stats Row */}

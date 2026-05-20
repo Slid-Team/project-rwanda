@@ -8,9 +8,9 @@
   "auditStandard": "ISAE 3000R",
   "dataSource": "https://tether.to/en/transparency/?tab=reports",
 
-  "trustScore": 72,
-  "grade": "C",
-  "status": "CAUTION",
+  "trustScore": 78,
+  "grade": "B-",
+  "status": "MODERATE RISK",
 
   "overview": {
     "totalAssets": 191767741495,
