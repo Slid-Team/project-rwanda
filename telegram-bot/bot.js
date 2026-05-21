@@ -102,7 +102,7 @@ async function sendLatestReport(chatId, projectId) {
     message += `\n⚠️ ${analysis.redFlags.length} red flag(s) detected\n`;
   }
 
-  message += `\n[View Full Analysis](https://rwa-nda.vercel.app/project/${projectId})`;
+  message += `\n[View Full Analysis](https://project-rwanda.vercel.app/project/${projectId})`;
 
   await bot.sendMessage(chatId, message, {
     parse_mode: 'Markdown',
@@ -335,19 +335,19 @@ export async function sendAlert(projectId, alert) {
       `*${project.name}* (${project.token})\n\n` +
       `${oldEmoji} ${alert.oldGrade} → ${newEmoji} ${alert.newGrade}\n\n` +
       `${alert.summary}\n\n` +
-      `[View Full Analysis](https://rwa-nda.vercel.app/project/${projectId})`;
+      `[View Full Analysis](https://project-rwanda.vercel.app/project/${projectId})`;
   } else if (alert.type === 'new_report') {
     message = `*New Report Available*\n\n` +
       `*${project.name}* (${project.token})\n\n` +
       `Grade: ${GRADE_EMOJI[alert.grade] || '⚪'} ${alert.grade}\n` +
       `Report Date: ${alert.reportDate}\n\n` +
-      `[View Analysis](https://rwa-nda.vercel.app/project/${projectId})`;
+      `[View Analysis](https://project-rwanda.vercel.app/project/${projectId})`;
   } else if (alert.type === 'red_flag') {
     message = `*Red Flag Detected*\n\n` +
       `*${project.name}* (${project.token})\n\n` +
       `⚠️ ${alert.title}\n` +
       `${alert.description}\n\n` +
-      `[View Details](https://rwa-nda.vercel.app/project/${projectId})`;
+      `[View Details](https://project-rwanda.vercel.app/project/${projectId})`;
   }
 
   // Send to all subscribers
